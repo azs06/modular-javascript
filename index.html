@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="statsModule">
+        <script id="stats-template" type="text/template">
+            {{#people}}
+                People Count: {{.}}
+            {{/people}}
+        </script>
+    </div>
+    <div id="peopleModule">
+        <h1>People</h1>
+        <input placeholder="name" type="text">
+        <button id="addPerson">Add Person</button>
+        <ul id="people">
+            <script id="people-template" type="text/template">
+                {{#people}}
+                    <li>
+                        <span>{{.}}</span>
+                        <i class="del">X</i>
+                    </li>
+                {{/people}}
+            </script>
+        </ul>
+
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js" integrity="sha512-HYiNpwSxYuji84SQbCU5m9kHEsRqwWypXgJMBtbRSumlx1iBB6QaxgEBZHSHEGM+fKyCX/3Kb5V5jeVXm0OglQ==" crossorigin="anonymous"></script>
+<script src="./pubsub.js"></script>
+<script src="./stats.js"></script>
+<script src="./revealing-module.js"></script>
+</body>
+</html>
